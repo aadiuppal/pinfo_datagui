@@ -20,12 +20,12 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: akshay
-  password: akshay
+  username: postgres
+  password: aaditya
 
 development:
   <<: *default
-  database: multisitesurveyapp_development
+  database: multisurveyapp_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: multisitesurveyapp_test
+  database: multisurveyapp_test
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -81,8 +81,8 @@ test: &test
 #
 production:
   <<: *default
-  database: multisitesurveyapp_production
-  username: multisitesurveyapp
+  database: multisurveyapp_production
+  username: postgres
   password: <%= ENV['MULTISITESURVEYAPP_DATABASE_PASSWORD'] %>
 
 cucumber:
